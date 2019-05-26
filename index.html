@@ -33,13 +33,40 @@
 
   <main role="main" class="flex-shrink-0">
       <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md">
-      <section>
-        <p>Content goes here</p>
-      </section>  
+        <div class="col-md-2"></div>
+        <div class="col-md">
+          <section class="border border-primary rounded">
+            <table id="schedule" class="table">
+              <tr>
+                <th>Train Name</th>
+                <th>Destination</th>
+                <th>Frequency (min)</th>
+                <th>Next Arrival</th>
+                <th>Minutes Away</th>
+              </tr>    
+            </table>
+          </section>
+        </div>
+        <div class="col-md-2"></div>
       </div>
-      <div class="col-md-2"></div>
+      
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md">
+          <section class="border border-primary rounded">
+            <form>
+              Train Name<br>
+              <input type="text"><br>
+              Destination<br>
+              <input type="text"><br>
+              First Train Time (24hr format)<br>
+              <input type="text"><br>
+              Frequency (in min)<br>
+              <input type="text"><br>
+            </form>
+          </section>
+        </div>
+        <div class="col-md-2"></div>
       </div>
   </main>
 
