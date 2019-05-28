@@ -9,9 +9,11 @@
   <!-- reset -->
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
   <!-- jquery -->
   <script type="text/javascript" src="assets/javascript/jquery-3.4.1.js"></script>
+  <!-- moment.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
   <!-- bootstrap -->
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
   <script type="text/javascript" src="assets/javascript/bootstrap.js"></script>
@@ -40,13 +42,15 @@
           <section class="border border-primary rounded">
             <p class="bg-primary">Current Train Schedule</p>
             <table id="schedule-table" class="table">
-              <tr>
-                <th>Train Name</th>
-                <th>Destination</th>
-                <th>Frequency (min)</th>
-                <th>Next Arrival</th>
-                <th>Minutes Away</th>
-              </tr>    
+              <thead>
+                <tr>
+                  <th>Train Name</th>
+                  <th>Destination</th>
+                  <th>Frequency (min)</th>
+                  <th>Next Arrival</th>
+                  <th>Minutes Away</th>
+                </tr>    
+              </thead>
             </table>
           </section>
         </div>
@@ -75,7 +79,7 @@
                 <label for="input-frequency">Frequency (in min)</label>
                 <input id="input-frequency" type="text" class="form-control">
               </div>
-              <input type="submit" class="btn btn-primary">
+              <button id="add-train-btn" class="btn btn-primary">Add Train</button>
             </form>
           </section>
         </div>

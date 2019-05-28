@@ -10,3 +10,45 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+console.log("firebase intialized")
+var database = firebase.database();
+
+
+var addTrain = function() {
+  
+  var trainName = $("#input-name").val().trim();
+  var trainDestination = $('#input-destination').val().trim();
+  var trainFirstTrip = $('#input-first-trip').val().trim();
+  var trainFrequency = $('#input-frequency').val().trim();
+  
+  var newTrain = {
+    name: trainName,
+    destination: trainDestination,
+    firstTrip: trainFirstTrip,
+    frequency: trainFrequency
+  };
+  
+  database.ref().push(newTrain);
+  
+  console.log("---------New Train---------")
+  console.log(newTrain.name);
+  console.log(newTrain.destination);
+  console.log(newTrain.firstTrip);
+  console.log(newTrain.frequency);
+  
+  // TODO: Add success message that is not an alert box
+  
+  $("#input-name").val("");
+  $('#input-destination').val("");
+  $('#input-first-trip').val("");
+  $('#input-frequency').val("");
+};
+
+$(document).ready(function() {
+  // Add event handler to the button
+  $('#add-train-btn').on('click' , function(event) {
+    event.preventDefault();
+    console.log("Click!");
+    addTrain();
+  });
+});
